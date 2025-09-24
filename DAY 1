@@ -33,3 +33,21 @@ But actual development workflow (commits, branching, merges) is done locally via
 👉 In real-world DevOps jobs:
 90% Git work → from terminal (your instance/VSCode terminal).
 10% GitHub/GitLab → for Pull Requests, reviewing code, repo settings.
+
+
+check if git present
+git --version
+
+if not present, to install git
+sudo apt update
+sudo apt install git -y
+
+-y is Good for quick installs, its giving yes in advance
+
+Set username & email (used in commits):
+
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+
+Verify:
+   git config --list
