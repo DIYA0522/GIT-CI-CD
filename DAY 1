@@ -1,1 +1,35 @@
 Git Essentials
+
+Before that,
+Version Control System (VCS) = tool that tracks changes to files over time.
+Think of it like a time machine for code — you can see who changed what, when, and why, and roll back if needed.
+
+Two types of VCS:
+
+Centralized VCS (CVCS) – one central server (e.g., SVN, CVS). Everyone pulls/pushes changes from that single place.
+Problem: If server goes down, no one can work.
+
+Distributed VCS (DVCS) – every developer has a full copy of the repo (e.g., Git).
+Benefit: Work offline, full history on your machine, safer, faster.
+👉 Git is a DVCS.
+
+🔹 Why Git?
+
+Tracks changes (who/when/what).
+Allows branching & merging → developers can work on features in isolation and then combine.
+Handles conflicts when two people change the same part of a file.
+Plays well with remote hosting platforms like GitHub, GitLab, Bitbucket for collaboration.
+
+🔹 How We Manage Git
+
+There are two ways:
+Command-line (CLI) →
+Running Git commands on your machine/instance.
+
+UI (Web Interface like GitHub/GitLab) →
+Manage repos visually (create repo, open pull requests, review code).
+But actual development workflow (commits, branching, merges) is done locally via CLI.
+
+👉 In real-world DevOps jobs:
+90% Git work → from terminal (your instance/VSCode terminal).
+10% GitHub/GitLab → for Pull Requests, reviewing code, repo settings.
