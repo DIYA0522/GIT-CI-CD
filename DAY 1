@@ -101,24 +101,32 @@ View History
 See commit history:
 git log --oneline
 
-Undo staging (if needed):
+Undo staging (if needed):                 //to remove from staging, so that it wont be included in nxt commit
 git reset hello.txt
 
-Discard changes (revert file to last commit):
+Discard changes (revert file to last commit):                 //works in case if not staged but committed, checkout will remove last commit
 git checkout -- hello.txt
 
 Remote Repo Basics
 
-👉 For now, you can create a new repo on GitHub (don’t add README/license).
+👉 For now, you can create a new repo on GitHub UI (don’t add README/license).
 Then connect it:
 
 git remote add origin https://github.com/<your-username>/<repo-name>.git
+//origin = the name you give to this connection (GitHub repo).
 git branch -M main
+//Makes sure your current branch is called main (GitHub default).
 git push -u origin main
-
+//Uploads your local commits to the remote GitHub repo.
+-u sets origin main as the default upstream, so next time you can just run git push.
 
 Check remote:
 git remote -v
+//Shows the remote connections your repo knows about.
 
 Pulling latest:
 git pull origin main
+//Downloads any new commits from the remote repo and merges them into your local branch.
+
+
+
