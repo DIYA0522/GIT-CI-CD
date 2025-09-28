@@ -1,0 +1,40 @@
+Branching & Merging
+
+What is a branch?
+
+Think of it as a parallel line of development.
+main (or master) is the default branch.
+You create other branches to work on features/bug fixes without touching main.
+
+git branch                         # list branches
+git branch new-feature             # create a branch
+git checkout new-feature           # switch to branch
+git checkout -b new-feature        # create + switch in one step
+
+
+You are in the root directory /, not your repo folder. Git commands only work inside a folder initialized as a Git repo.
+
+Go to your repo folder
+cd ~/GIT_PRACTICE
+
+Confirm it’s a Git repo
+git status
+If it shows the branch and staged/unstaged files, you’re good.
+If it says .git not found, you may need to git init or clone the repo again.
+
+Check branches
+git branch -a
+Shows local and remote branches.
+
+Create or switch to main
+
+If main exists on remote:
+git checkout -b main origin/main
+
+If not, create locally:
+git checkout -b main
+
+git merge feature-branch
+git push -u origin main
+
+git status is your friend — it shows files with conflicts.
