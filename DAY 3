@@ -38,3 +38,20 @@ git merge feature-branch
 git push -u origin main
 
 git status is your friend — it shows files with conflicts.
+
+
+Open a Pull Request (PR)
+
+Go to GitHub → you’ll see a “Compare & pull request” button for your new branch.
+Create PR → title: Feature-day4 addition → assign reviewer if needed → submit.
+
+PR use is basically, 
+Local workflow (no PR)
+Team workflow (with PR):
+Instead of merging directly into main from your local machine
+Commit your changes in your feature branch.
+Push the branch to GitHub
+On GitHub → open a Pull Request (Compare & pull request).
+Your teammates (or even just you) can review the changes before merging.
+Once reviewed/approved → merge button does the merge into main on GitHub.
+So yes — it’s basically a check/safety step before merging into main.
