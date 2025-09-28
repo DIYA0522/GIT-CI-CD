@@ -1,0 +1,71 @@
+🔹  What is CI/CD?
+
+CI (Continuous Integration): Automatically builds and tests code whenever changes are pushed.
+CD (Continuous Deployment/Delivery): Automatically deploys code to servers/cloud after passing tests.
+
+Think of it like:
+👉 You push code → GitHub Actions/Jenkins picks it up → runs checks → if all good → deploys.
+
+Git is a distributed version control system (VCS).
+Use: It helps you track changes in your code, go back in history
+Runs in you local machine(CLI)
+
+GitHub/GitLab = platforms to host/manage repositories and collaborate with others
+GitLab = same as GitHub, but with strong built-in CI/CD.
+
+GitHub Actions / GitLab CI / Jenkins = CI/CD built in automation tools.
+Automates workflows (build, test, deploy).
+Works on their own server.
+
+🔹 What is a Pipeline?
+
+A pipeline = series of automated steps (stages) your code goes through.
+
+Example stages:
+Build → compile code, install dependencies.
+Test → run unit tests, check quality.
+Deploy → push app to server/cloud.
+
+GitHub Actions basics
+
+Simple GitHub Actions Workflow
+
+mkdir -p .github/workflows           // =p makes parent directories as needed, With -p:Creates .github if it doesn’t exist, then creates workflows inside it.
+nano .github/workflows/hello.yml
+
+Paste this inside:
+yaml
+-----------------------
+
+name: Hello World Workflow                   //name of the workflow
+
+on: [push]                                   //Defines the event that triggers the workflow
+
+jobs:                                        //A workflow can have multiple jobs, each can run independently or sequentially
+  build:                                     //Name of the job
+    runs-on: ubuntu-latest                   //The runner (virtual machine) where this job will run.
+    steps:                                   //Individual steps inside a job.              
+      - name: Checkout code
+        uses: actions/checkout@v3            //prebuilt action that pulls your repo code into the runner.
+                                             //Without this, your workflow wouldn’t have access to your repository files.
+
+      - name: Run Hello World
+        run: echo "Hello, World! 🎉"        //Execute a shell command in the runner.
+
+-----------------------
+
+Commit and push:
+
+git add .github/workflows/hello.yml
+git commit -m "added hello world workflow"
+git push origin main
+
+Trigger: any push to the repo.
+Runs one job (build) on a Linux runner.
+Steps in job:
+Checkout repo code.
+Print “Hello World” message.
+Result: You see the workflow run automatically in GitHub Actions whenever you push.
+
+You just created your first CI/CD pipeline
+
