@@ -131,3 +131,10 @@ Optionally save artifacts or notify team
 Outcome:
 Code is automatically verified, packaged, and deployed
 Reduces human error, speeds up delivery
+
+
+Automated deployment is better because:
+
+   Reduces human error
+   Faster, repeatable, reliable
+   Can roll back easily
