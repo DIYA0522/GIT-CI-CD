@@ -69,3 +69,65 @@ Result: You see the workflow run automatically in GitHub Actions whenever you pu
 
 You just created your first CI/CD pipeline
 
+
+Automating Tests & Builds your code on every pull request (PR)
+ Ensures code quality before merging into main.
+Example workflow stages:
+Checkout code
+Install dependencies
+Run tests/lint
+Build app
+Save build artifacts (optional)
+
+Create a file: .github/workflows/pr-tests.yml
+
+name: PR Test & Build
+
+# Trigger workflow on pull request to main
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run build
+        run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: build/
+
+
+End-to-end CI/CD Flow (Git + GitHub Actions)
+
+Git workflow:
+Create branch → commit → push → PR → merge → main
+
+CI/CD workflow:
+Trigger workflow on push/PR
+Run tests → build → deploy automatically
+Optionally save artifacts or notify team
+
+Outcome:
+Code is automatically verified, packaged, and deployed
+Reduces human error, speeds up delivery
