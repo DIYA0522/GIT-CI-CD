@@ -117,7 +117,7 @@ git remote add origin https://github.com/<your-username>/<repo-name>.git
 git branch -M main
 //Makes sure your current branch is called main (GitHub default).
 git push -u origin main
-//Uploads your local commits to the remote GitHub repo.
+//Uploads your local commits to the remote GitHub repo.      LOCAL --> REMOTE
 -u sets origin main as the default upstream, so next time you can just run git push.
 
 Check remote:
@@ -125,7 +125,7 @@ git remote -v
 //Shows the remote connections your repo knows about.
 
 Pulling latest:
-git pull origin main
+git pull origin main                                    REMOTE --> LOCAL
 //Downloads any new commits from the remote repo and merges them into your local branch.
 
 
